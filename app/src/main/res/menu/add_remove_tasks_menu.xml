@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- "Mark Favorite", should appear as action button if possible -->
+
+    <item
+        android:id="@+id/action_cancel"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_cancel_black_24dp"
+        android:title="Favorite"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_done"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_done_black_24dp"
+        android:title="Favorite"
+        app:showAsAction="ifRoom"/>
+
+</menu>

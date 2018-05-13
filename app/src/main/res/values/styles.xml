@@ -32,4 +32,9 @@
         <item name="android:textColor">@android:color/black</item>
     </style>
 
+    <string-array name="labels_array">
+        <item>Personal List</item>
+        <item>Business List</item>
+    </string-array>
+
 </resources>

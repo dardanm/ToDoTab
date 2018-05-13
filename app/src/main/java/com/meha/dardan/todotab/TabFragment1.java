@@ -15,6 +15,7 @@ import java.util.LinkedList;
 
 public class TabFragment1 extends Fragment {
 
+    private List personalList = new List(0,"personal");
 
     private RecyclerView tRecyclerView;
     private RecyclerView.Adapter tAdapter;
@@ -24,23 +25,26 @@ public class TabFragment1 extends Fragment {
     final LinkedList<String> personalListTitles = new LinkedList<>();
     final LinkedList<String> personalListDescription = new LinkedList<>();
 
+    final LinkedList<Task> personalListTaskTitles = new LinkedList<>();
+
     public TabFragment1() {
         // Required empty public constructor
     }
-
-    // Values
-    private String[] mNavTitles = {"Title One", "Title Two", "Title Three"};
-    private String mName;
-    private String mEmail;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab_fragment1, container, false);
 
-        for (int i = 0; i < 15; i++) {
-            personalListTitles.addLast("Word " + i);
-        }
+        Task task1 = new Task((int)personalList.getId(),"Note title ","notes description","0","0");
+        Task task2 = new Task((int)personalList.getId(),"Test title 2","Some notes go here","0","0");
+
+
+        personalListTaskTitles.add(task1);
+
+        personalListTitles.addLast(task1.getName());
+        personalListTitles.addLast(task2.getName());
+
 
         // Replace 'android.R.id.list' with the 'id' of your RecyclerView
         tRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview1);
