@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import java.util.LinkedList;
 
-public class TabFragment1 extends Fragment {
+public class TabFragment3 extends Fragment {
 
 
     private RecyclerView tRecyclerView;
@@ -21,36 +21,39 @@ public class TabFragment1 extends Fragment {
     private RecyclerView.Adapter tAdapter2;
     private RecyclerView.LayoutManager mLayoutManager;
 
-    final LinkedList<String> personalListTitles = new LinkedList<>();
+    final LinkedList<String> professionalListTitles = new LinkedList<>();
     final LinkedList<String> personalListDescription = new LinkedList<>();
 
-    public TabFragment1() {
+    public TabFragment3() {
         // Required empty public constructor
     }
 
-    // Values
-    private String[] mNavTitles = {"Title One", "Title Two", "Title Three"};
-    private String mName;
-    private String mEmail;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab_fragment1, container, false);
 
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         for (int i = 0; i < 15; i++) {
-            personalListTitles.addLast("Word " + i);
+            professionalListTitles.addLast("Word " + i);
         }
 
         // Replace 'android.R.id.list' with the 'id' of your RecyclerView
-        tRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview1);
+        tRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         mLayoutManager = new LinearLayoutManager(this.getActivity());
         Log.d("debugMode", "The application stopped after this");
         tRecyclerView.setLayoutManager(mLayoutManager);
 
-        tAdapter = new TaskAdapter(getActivity(),personalListTitles);
+        tAdapter = new TaskAdapter(getActivity(),professionalListTitles);
         tRecyclerView.setAdapter(tAdapter);
-        return view;
     }
 
 }

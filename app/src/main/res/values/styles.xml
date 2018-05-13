@@ -6,6 +6,30 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="note_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignBaseline">@+id/completedCheckBox</item>
+        <item name="android:layout_alignBottom">@+id/completedCheckBox</item>
+        <item name="android:layout_toRightOf">@+id/completedCheckBox</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="note_description">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/nameTextView</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="android:layout_toRightOf">@+id/completedCheckBox</item>
+        <item name="android:paddingBottom">7dp</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
 </resources>

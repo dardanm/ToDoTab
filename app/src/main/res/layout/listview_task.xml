@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutTaskItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <CheckBox
+        android:id="@+id/completedCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dp"
+        />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:text="@string/task_name"
+        style="@style/note_title" />
+
+    <TextView
+        android:id="@+id/notesTextView"
+        android:text="@string/task_notes"
+        style="@style/note_description" />
+
+</RelativeLayout>
