@@ -1,11 +1,13 @@
 package com.meha.dardan.todotab;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -14,30 +16,25 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
-
-    private List pList = new List(0,"personal");
-
-    private RecyclerView tRecyclerView;
-    private RecyclerView.Adapter tAdapter;
-    private RecyclerView.Adapter tAdapter2;
-    private RecyclerView.LayoutManager mLayoutManager;
-
-    final LinkedList<String> personalListTitles = new LinkedList<>();
-    final LinkedList<String> personalListDescription = new LinkedList<>();
-
-    private TaskListOpenHelper mDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
+        // Preferences
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        SharedPreferences sharedPref =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        Boolean switchPref = sharedPref.getBoolean
+                (SettingsActivity.KEY_PREF_EXAMPLE_SWITCH, false);
+        // Test toast
+        Toast.makeText(this, switchPref.toString(), Toast.LENGTH_SHORT).show();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -78,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu); // set your file name
+        inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -88,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_add:
                 Intent i = new Intent(this,AddRemoveTasksActivity.class);
                 this.startActivity(i);
+                return true;
+            case R.id.action_settings:
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

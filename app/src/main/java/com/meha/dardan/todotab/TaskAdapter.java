@@ -2,6 +2,7 @@ package com.meha.dardan.todotab;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +20,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.WordViewHolder
      */
     class WordViewHolder extends RecyclerView.ViewHolder {
         public final TextView wordItemView;
+        public final TextView descItemView;
         //Button delete_button;
         //Button edit_button;
 
         public WordViewHolder(View itemView) {
             super(itemView);
             wordItemView = (TextView) itemView.findViewById(R.id.nameTextView);
+            descItemView = (TextView) itemView.findViewById(R.id.notesTextView);
 //            delete_button = (Button)itemView.findViewById(R.id.delete_button);
 //            edit_button = (Button)itemView.findViewById(R.id.edit_button);
         }
@@ -53,9 +56,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.WordViewHolder
 
     @Override
     public void onBindViewHolder(WordViewHolder holder, int position) {
-        holder.wordItemView.setText("placeholder");
+        holder.wordItemView.setText("Title of notes");
+        holder.descItemView.setText("Some notes go here");
 
-//        WordItem currentItem =   db.query(position);
+        WordItem currentItem =   db.query(position);
 //        holder.wordItemView.setText(currentItem.getWord());
     }
 
@@ -63,6 +67,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.WordViewHolder
     public int getItemCount() {
         // Placeholder so we can see some mock data.
         //return 10;
+        Log.d("PLACEHOLDER", String.valueOf(db.getNumEntries()));
         return (int) db.getNumEntries();
     }
 }

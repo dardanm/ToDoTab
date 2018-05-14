@@ -43,9 +43,6 @@ public class TabFragment1 extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab_fragment1, container, false);
 
-        Task task1 = new Task((int)personalList.getId(),"Note title ","notes description","0","0");
-        Task task2 = new Task((int)personalList.getId(),"Test title 2","Some notes go here","0","0");
-
         db = new TaskListOpenHelper(getActivity());//initialize so we can use
         // Create recycler view.
         mRecyclerView = view.findViewById(R.id.recyclerview1);
@@ -55,8 +52,6 @@ public class TabFragment1 extends Fragment {
         mRecyclerView.setAdapter(mAdapter);
         // Give the recycler view a default layout manager.
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-
 
         return view;
     }
