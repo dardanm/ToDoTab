@@ -29,7 +29,10 @@ public class TabFragment1 extends Fragment {
 
     final String[] personalListTaskTitles = new String[100];
 
-    private TaskListOpenHelper db;
+    public static final int WORD_EDIT = 1;
+    public static final int WORD_ADD = -1;
+
+    private TaskListOpenHelper mDB;
     private RecyclerView mRecyclerView;
     private TaskAdapter mAdapter;
     private int mLastPosition;
@@ -46,11 +49,11 @@ public class TabFragment1 extends Fragment {
         Task task1 = new Task((int)personalList.getId(),"Note title ","notes description","0","0");
         Task task2 = new Task((int)personalList.getId(),"Test title 2","Some notes go here","0","0");
 
-        db = new TaskListOpenHelper(getActivity());//initialize so we can use
+        mDB = new TaskListOpenHelper(getActivity());//initialize so we can use
         // Create recycler view.
         mRecyclerView = view.findViewById(R.id.recyclerview1);
         // Create an mAdapter and supply the data to be displayed.
-        mAdapter = new TaskAdapter(getActivity(), db);//update to include reference to db
+        mAdapter = new TaskAdapter(getActivity(), mDB);//update to include reference to db
         // Connect the mAdapter with the recycler view.
         mRecyclerView.setAdapter(mAdapter);
         // Give the recycler view a default layout manager.
