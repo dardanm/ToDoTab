@@ -29,11 +29,15 @@ public class MainActivity extends AppCompatActivity {
     final LinkedList<String> personalListTitles = new LinkedList<>();
     final LinkedList<String> personalListDescription = new LinkedList<>();
 
+    private TaskListOpenHelper mDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

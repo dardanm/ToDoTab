@@ -8,4 +8,31 @@
 
     <string name="task_name">Task</string>
     <string name="task_notes">Notes</string>
+
+    <string name="hint_word">Word...</string>
+    <string name="hint_definition">Definition...</string>
+    <string name="button_save">Save</string>
+    <string name="button_new">New</string>
+    <string name="button_edit">Edit</string>
+    <string name="button_delete">Delete</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+
+    <string-array name="dummy_data">
+        <item name="dummy_data1">Spinach</item>
+        <item name="dummy_data2">Broccoli</item>
+        <item name="dummy_data3">Chocolate</item>
+        <item name="dummy_data4">Chicken</item>
+        <item name="dummy_data5">Arroz</item>
+        <item name="dummy_data6">Ensalada</item>
+        <item name="dummy_data7">Chicarron</item>
+        <item name="dummy_data8">Churrasco</item>
+        <item name="dummy_data9">Lechon</item>
+        <item name="dummy_data10">Tostones</item>
+        <item name="dummy_data11">Saganaki</item>
+        <item name="dummy_data12">Falafel</item>
+        <item name="dummy_data13">Lamb</item>
+        <item name="dummy_data14">Mangu</item>
+        <item name="dummy_data15">Mofongo</item>
+    </string-array>
+
 </resources>

@@ -73,7 +73,7 @@ public class AddRemoveTasksActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_done:
-                Intent i = new Intent(this,AddRemoveTasksActivity.class);
+                Intent i = new Intent(this,MainActivity.class);
                 this.startActivity(i);
                 return true;
             default:
